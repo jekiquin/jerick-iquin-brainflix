@@ -1,9 +1,15 @@
+@use '../1-helpers/variables' as *;
+@use './typography' as *;
+
 html {
     font-size: 62.5%;
 }
 
 body {
     font-size: 1.3rem;
+    font-family: "Avenir Next";
+    color: $paragraph-color;
+    min-width: 32.0rem;
 }
 
 *, *::after, *::before {
