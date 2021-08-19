@@ -1,0 +1,10 @@
+%flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+%flex--column {
+    @extend %flex;
+    flex-direction: column;
+}
