@@ -1,3 +1,9 @@
+@use '../../partials/1-helpers/placeholders';
+
 .header__nav {
     width: 100%;
+}
+
+.header__upload {
+    @extend %flex;
 }
