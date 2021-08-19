@@ -1,11 +1,29 @@
-@use '../../partials/1-helpers/placeholders';
+@use '../../partials/1-helpers/helpers' as *;
 
 .header__nav {
+    @extend %flex--column;
     width: 100%;
+ 
+    @include screen(map-get($screen, "tablet")) {
+        margin-left: 16.9rem;
+        flex-direction: row;
+    }
+
+    @include screen(map-get($screen, "desktop")) {
+        margin-left: 50.9rem;
+        flex-direction: row;
+    }
 }
 
 .header__upload {
     @extend %flex;
     margin-top: .8rem;
     margin-bottom: 1.6rem;
+    width: 100%;
+
+    @include screen(map-get($screen, "tablet")) {
+        margin-left: 2.4rem;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
 }

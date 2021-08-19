@@ -1,6 +1,10 @@
-@use '../../partials/1-helpers/placeholders' as *;
+@use '../../partials/1-helpers/helpers' as *;
 
 .header__profile-picture {
     @extend %profile-picture;
     margin-left: 1.6rem;
+
+    @include screen(map-get($screen, "tablet")) {
+        margin-left: 2.4rem;
+    }
 }

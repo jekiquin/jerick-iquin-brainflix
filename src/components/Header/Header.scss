@@ -1,13 +1,10 @@
-@use '../../partials/1-helpers/variables' as *;
-@use '../../partials/1-helpers/placeholders' as *;
+@use '../../partials/1-helpers/helpers' as *;
 
 .header {
 
     &__container {
         @extend %flex--column;
-        width: 100%;
-        padding-left: map-get($pad, "mobile");
-        padding-right: map-get($pad, "mobile");
+        @extend %limiting-container;
     }
 
     &__logo {

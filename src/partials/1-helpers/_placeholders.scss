@@ -1,4 +1,5 @@
 @use '../../partials/1-helpers/variables' as *;
+@use '../../partials/1-helpers/mixin' as *;
 
 %flex {
     display: flex;
@@ -28,4 +29,23 @@
     box-shadow: none;
     border: none;
     cursor: pointer;
+}
+
+%limiting-container {
+    width: 100%;
+    padding-left: map-get($pad, "mobile");
+    padding-right: map-get($pad, "mobile");
+    max-width: map-get($screen, "desktop");
+
+    @include screen(map-get($screen, "tablet")){
+        flex-direction: row;
+        padding-left: map-get($pad, "tablet");
+        padding-right: map-get($pad, "tablet");
+        height: 8rem;
+    }
+
+    @include screen(map-get($screen, "desktop")){
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
