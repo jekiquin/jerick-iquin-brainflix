@@ -1,3 +1,5 @@
+@use '../../partials/1-helpers/variables' as *;
+
 %flex {
     display: flex;
     align-items: center;
@@ -7,4 +9,23 @@
 %flex--column {
     @extend %flex;
     flex-direction: column;
+}
+
+%profile-picture {
+    object-fit: cover;
+    height: 4.8rem;
+    width: 4.8rem;
+    border-radius: 50%;
+}
+
+%button {
+    width: 100%;
+    height: 4.8rem;
+    padding: 1rem;
+    background-color: $primary-cta-color;
+    color: $primar-cta-text;
+    border-radius: 4px;
+    box-shadow: none;
+    border: none;
+    cursor: pointer;
 }

@@ -1,12 +1,5 @@
-@use '../../partials/1-helpers/variables' as *;
+@use '../../partials/1-helpers/placeholders' as *;
 
-button {
-    width: 100%;
-    padding: 1rem;
-    background-color: $primary-cta-color;
-    color: $primar-cta-text;
-    border-radius: 4px;
-    box-shadow: none;
-    border: none;
-    cursor: pointer;
+.header__button {
+    @extend %button;
 }

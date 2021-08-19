@@ -1,0 +1,6 @@
+@use '../../partials/1-helpers/placeholders' as *;
+
+.header__profile-picture {
+    @extend %profile-picture;
+    margin-left: 1.6rem;
+}
