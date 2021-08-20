@@ -2,6 +2,7 @@
 import { Component } from 'react';
 import VideoSection from '../VideoSection/VideoSection';
 import InfoSection from '../InfoSection/InfoSection';
+import CommentSection from '../CommentSection/CommentSection';
 
 // sass
 import './Main.scss';
@@ -25,6 +26,7 @@ class Main extends Component{
                 <div className="content__container">
                     <VideoSection selectedVideo={''} selectedPoster={this.selectInfo(this.state.currentId).image}/>
                     <InfoSection videoInfo={this.selectInfo(this.state.currentId)} />
+                    <CommentSection commentsInfo={this.selectInfo(this.state.currentId).comments} />
                     {/* main
                     - section video
                         - video

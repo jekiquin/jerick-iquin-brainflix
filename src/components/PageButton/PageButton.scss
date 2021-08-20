@@ -2,9 +2,12 @@
 
 .header__button {
     @extend %button;
-    font-size: 1.5rem;
 
     &::before {
         content: url('../../assets/Images/Icons/Icon-upload.svg');
     }
+}
+
+.comments__form-submit {
+    @extend %button;
 }

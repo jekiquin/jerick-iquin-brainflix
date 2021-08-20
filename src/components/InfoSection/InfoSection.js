@@ -3,7 +3,7 @@ import likeLogo from '../../assets/Images/Icons/Icon-likes.svg';
 
 function InfoSection({ videoInfo }) {
     return(
-        <>
+        <section className="content">
         <div className="content__info">
             <h1 className="content__info-heading">{videoInfo.title}</h1>
 
@@ -27,7 +27,7 @@ function InfoSection({ videoInfo }) {
                 {videoInfo.description}
             </p>
         </div>
-        </>
+        </section>
     )
 }
 

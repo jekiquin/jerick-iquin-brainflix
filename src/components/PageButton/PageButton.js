@@ -1,8 +1,13 @@
 import './PageButton.scss';
 
-function PageButton({ className, value }) {
+function PageButton({ submit, className, value }) {
+    let button = submit 
+        ? <button type="submit" className={className}> {value}</button>
+        : <button className={className}> {value}</button>
     return (
-        <button className={className}> {value}</button>
+        <>
+            {button}
+        </>
     )
 }
 

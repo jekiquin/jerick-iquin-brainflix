@@ -8,7 +8,7 @@ function HeaderNav() {
         <div className="header__nav">
             <SearchBar />
             <div className="header__upload">
-                <PageButton className='header__button' value='UPLOAD' />
+                <PageButton submit={false} className='header__button' value='UPLOAD' />
                 <ProfilePicture className='header__profile-picture'/>
             </div>
         </div>

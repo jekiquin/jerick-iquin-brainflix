@@ -4,7 +4,7 @@ function VideoSection({ selectedVideo, selectedPoster }) {
     console.log(selectedVideo)
     return (
         <section className="content__video-container">
-            <video className="content__video" src={selectedVideo} poster={selectedPoster}></video>
+            <video className="content__video" src={selectedVideo} poster={selectedPoster} controls></video>
         </section>
     )
 }

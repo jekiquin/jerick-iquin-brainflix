@@ -8,3 +8,7 @@
         margin-left: 2.4rem;
     }
 }
+
+.comments__form-profile-picture {
+    @extend %profile-picture;
+}
