@@ -1,8 +1,8 @@
 import './PageButton.scss';
 
-function PageButton(props) {
+function PageButton({ className, value }) {
     return (
-        <button className={props.className}> {props.value}</button>
+        <button className={className}> {value}</button>
     )
 }
 

@@ -2,4 +2,10 @@
 
 .header__button {
     @extend %button;
+    // font-weight: 700;
+    font-size: 1.8rem;
+
+    &::before {
+        content: url('../../assets/Images/Icons/Icon-upload.svg');
+    }
 }

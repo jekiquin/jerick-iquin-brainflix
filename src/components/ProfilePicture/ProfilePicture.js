@@ -1,9 +1,9 @@
 import './ProfilePicture.scss';
 import profilePicture from '../../assets/Images/Profile/Mohan-muruge.jpg';
 
-function ProfilePicture(props) {
+function ProfilePicture({ className }) {
     return (
-        <img className={props.className} src={profilePicture} alt='Mohan Muruge' />
+        <img className={className} src={profilePicture} alt='Mohan Muruge' />
     )
 }
 

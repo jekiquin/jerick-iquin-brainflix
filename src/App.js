@@ -1,6 +1,7 @@
 import React from 'react';
-import Header from './components/Header/Header'
-// import videoData from './data/video-details.json';
+import Header from './components/Header/Header';
+import Main from './components/Main/Main';
+
 
 class App extends React.Component {
 
@@ -8,7 +9,8 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
-
+        <Main />
+                
       </div>
     );
   }

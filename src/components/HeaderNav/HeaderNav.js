@@ -5,13 +5,13 @@ import ProfilePicture from '../ProfilePicture/ProfilePicture';
 
 function HeaderNav() {
     return (
-        <nav className="header__nav">
+        <div className="header__nav">
             <SearchBar />
             <div className="header__upload">
-                <PageButton className='header__button' value='+ UPLOAD' />
+                <PageButton className='header__button' value='UPLOAD' />
                 <ProfilePicture className='header__profile-picture'/>
             </div>
-        </nav>
+        </div>
     )
 }
 
