@@ -1,7 +1,6 @@
 import { Component } from 'react';
 import videoList from '../../data/videos.json';
 
-// function VideoListSection({ currentId, handleClick }) {
 class VideoListSection extends Component {
     constructor(props) {
         super(props)
