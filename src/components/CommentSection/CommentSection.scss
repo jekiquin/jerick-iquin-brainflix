@@ -1,4 +1,4 @@
-@use '../../partials/1-helpers/placeholders' as *;
+@use '../../partials/1-helpers/helpers' as *;
 
 .comments {
     &__count{
@@ -8,5 +8,7 @@
     &__form-container {
         @extend %flex;
         align-items: flex-start;
+        padding-bottom: 2.4rem;
+        border-bottom: 1px solid $border-color;
     }
 }

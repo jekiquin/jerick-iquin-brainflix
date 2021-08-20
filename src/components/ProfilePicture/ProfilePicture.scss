@@ -11,8 +11,12 @@
 
 .comments__form-profile-picture {
     @extend %profile-picture;
+    margin-top: 2rem;
 }
 
-.comments__form-profile-picture {
-    margin-top: 2rem;
+.comments__comment-card-profilepic {
+    @extend %profile-picture;
+    background-color: $profile-placeholder-color;
+    flex-shrink: 0;
+    margin-right: map-get($pad, "mobile");
 }

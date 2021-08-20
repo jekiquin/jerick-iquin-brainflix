@@ -1,0 +1,14 @@
+@use '../../partials/1-helpers/helpers' as *;
+
+.comments__comment-card {
+    @extend %flex;
+    padding-top: map-get($pad, "mobile");
+    padding-bottom: map-get($pad, "mobile");
+    border-bottom: 1px solid $border-color;
+
+    &-name-date{
+        @extend %flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+    }
+}
