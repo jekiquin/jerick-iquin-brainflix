@@ -3,6 +3,7 @@ import likeLogo from '../../assets/Images/Icons/Icon-likes.svg';
 
 function InfoSection({ videoInfo }) {
     return(
+        <>
         <div className="content__info">
             <h1 className="content__info-heading">{videoInfo.title}</h1>
 
@@ -21,6 +22,12 @@ function InfoSection({ videoInfo }) {
                 </div>
             </div>
         </div>
+        <div className="content__info-ctx">
+            <p className="content__info-paragraph">
+                {videoInfo.description}
+            </p>
+        </div>
+        </>
     )
 }
 
