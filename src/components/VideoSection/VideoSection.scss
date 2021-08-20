@@ -1,0 +1,31 @@
+@use '../../partials/1-helpers/helpers' as *;
+
+.content__video-container {
+    @extend %flex;
+    background-color: black;
+    height: 38.125vw;  
+    min-height: 18.3rem;
+
+    .content__video{ 
+        width: 100%;
+        height: 100%;  
+        object-fit: cover;
+
+        @include screen(map-get($screen, "tablet")) {
+            width: 70rem;
+        }
+
+        @include screen(map-get($screen, "desktop")) {
+            width: 94.4rem;
+        }
+    }
+
+    @include screen(map-get($screen, "tablet")) {
+        height: 40rem;
+    }
+
+    @include screen(map-get($screen, "desktop")) {
+        height: 54rem;
+    }
+}
+
