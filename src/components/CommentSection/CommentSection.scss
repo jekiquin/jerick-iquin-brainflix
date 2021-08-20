@@ -1,0 +1,12 @@
+@use '../../partials/1-helpers/placeholders' as *;
+
+.comments {
+    &__count{
+        margin-bottom: 3.2rem;
+    }
+
+    &__form-container {
+        @extend %flex;
+        align-items: flex-start;
+    }
+}

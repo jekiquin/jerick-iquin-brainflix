@@ -1,0 +1,31 @@
+@use '../../partials/1-helpers/helpers' as *;
+
+.comments__form {
+    @extend %flex--column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-left: map-get($pad, "mobile");
+    flex-grow: 1;
+
+    &-input-container {
+        @extend %flex--column;
+        flex-grow: 1;
+        width: 100%;
+        align-items: flex-start;
+    }
+
+    &-input {
+        margin-top: 0.8rem;
+        margin-bottom: 1.6rem;
+        width: 100%;
+        padding: 1rem;
+        height: 10rem;
+        border-radius: 0.4rem;
+        resize: none;
+        outline: none;
+
+        &:focus {
+            border: 2px solid $primary-cta-color;
+        }
+    }
+}
