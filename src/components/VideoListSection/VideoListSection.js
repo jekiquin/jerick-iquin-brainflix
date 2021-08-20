@@ -14,7 +14,7 @@ class VideoListSection extends Component {
         return (
             <section className="video-list">
                 <h2 className="video-list__heading">NEXT VIDEO</h2>
-                {this.state.videos.map(video => {
+                {this.state.videos.filter(video => video.id !== this.props.currentId).map(video => {
                     return (
                         <article className="video-list__card" key={video.id} onClick={() => this.props.handleClick(video.id)}>
                             <img className="video-list__poster" src={video.image} alt={video.title} />
