@@ -2,6 +2,7 @@
 
 .content__video-container {
     @extend %flex;
+    justify-content: center;
     background-color: black;
     height: 38.125vw;  
     min-height: 18.3rem;

@@ -1,0 +1,15 @@
+@use '../../partials/1-helpers/placeholders' as *;
+
+.content__stats {
+    padding-bottom: 2.4rem;
+    @extend %flex;
+    justify-content: flex-start;   
+
+    &:first-child{
+        margin-right: 2.4rem;
+    }
+
+    &-icon {
+        margin-right: 0.8rem;
+    }
+}

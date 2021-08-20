@@ -1,0 +1,5 @@
+@use '../../partials/1-helpers/placeholders' as *;
+
+.content__container {
+    @extend %limiting-container;    
+}

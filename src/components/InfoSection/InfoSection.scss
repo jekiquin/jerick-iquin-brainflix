@@ -1,0 +1,59 @@
+@use '../../partials/1-helpers/helpers' as *;
+
+.content__info {
+    padding-top: 3.2rem;
+    padding-bottom: 4rem;
+
+    &-heading-container {
+        border-bottom: 1px solid $border-color;
+        @extend %flex--column;
+        align-items: flex-start;
+
+        @include screen(map-get($screen, "tablet")) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
+    &-heading {
+        margin-bottom: 1.6rem;
+    }
+
+    &-cite {
+        @extend %flex;
+        margin-bottom: 3.2rem;
+
+        @include screen(map-get($screen, "tablet")) {
+            margin-bottom: 2.4rem;
+        }
+    }
+
+    &-channel {
+        margin-right: .8rem;
+
+        &::before{
+            content: "By ";
+        }
+    }
+
+    &-stats{
+        @extend %flex;
+
+        @include screen(map-get($screen, "desktop")) {
+            margin-right: 3.2rem;
+        }
+    }
+
+    &-ctx {
+        padding-top: 2.4rem;
+    }
+
+    &-paragraph {
+        max-width: 64rem;
+    }
+
+    @include screen(map-get($screen, "tablet")) {
+        padding-top: 4.8rem;
+        padding-bottom: 6.4rem;
+    }
+}

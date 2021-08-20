@@ -4,7 +4,7 @@
 %flex {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 %flex--column {
@@ -39,10 +39,8 @@
     max-width: map-get($screen, "desktop");
 
     @include screen(map-get($screen, "tablet")){
-        flex-direction: row;
         padding-left: map-get($pad, "tablet");
         padding-right: map-get($pad, "tablet");
-        height: 8rem;
     }
 
     @include screen(map-get($screen, "desktop")){

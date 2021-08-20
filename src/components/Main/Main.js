@@ -31,27 +31,11 @@ class Main extends Component{
     render() {
         return(
             <main className="content">
+                <VideoSection selectedVideo={''} selectedPoster={this.selectInfo(this.state.currentId).image}/>
                 <div className="content__container">
-                    <VideoSection selectedVideo={''} selectedPoster={this.selectInfo(this.state.currentId).image}/>
                     <InfoSection videoInfo={this.selectInfo(this.state.currentId)} />
                     <CommentSection commentsInfo={this.selectInfo(this.state.currentId).comments} />
                     <VideoListSection currentId={this.state.currentId} handleClick={this.selectVideo} />
-                    {/* main
-                    - section video
-                        - video
-                    - section info
-                        - div info__ctx
-                        - h1 info__ctx-heading
-                        - div info__ctx-cite
-                            - p ctx__cite-person
-                            - p info__ctx-cite-date 
-                        - div info__ctx-stats
-                            - div info__ctx-stats-container
-                            - img info__ctx-stats-icon
-                            - img info__ctx-stats-count
-                    - section videolist
-                        
-                        */}
                 </div>
             </main>
         )
