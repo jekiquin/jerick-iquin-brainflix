@@ -1,23 +1,30 @@
+// imports
 import { Component } from 'react';
 import VideoSection from '../VideoSection/VideoSection';
+import InfoSection from '../InfoSection/InfoSection';
+
+// sass
 import './Main.scss';
+
+// data
 import videoList from '../../data/video-details.json';
 
 class Main extends Component{
     state = {
         videos: videoList,
-        currentId: videoList[0].id
+        currentId: videoList[0].id,
     }
 
-    selectPoster(id) {
-        return this.state.videos.find(video => video.id === id).image;
+    selectInfo(id) {
+        return this.state.videos.find(video => video.id === id);
     }
 
     render() {
         return(
             <main className="content">
                 <div className="content__container">
-                    <VideoSection selectedVideo={''} selectedPoster={this.selectPoster(this.state.currentId)} />
+                    <VideoSection selectedVideo={''} selectedPoster={this.selectInfo(this.state.currentId).image}/>
+                    <InfoSection videoInfo={this.selectInfo(this.state.currentId)} />
                     {/* main
                     - section video
                         - video
