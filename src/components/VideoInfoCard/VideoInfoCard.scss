@@ -8,6 +8,13 @@
         margin-bottom: 2.4rem;
         cursor: pointer;
         max-width: 38.4rem;
+        border-radius: 4px;
+
+        &:hover {
+            transform: scale(1.1, 1.1);
+            transform-origin: top left;
+            box-shadow: 2px 2px 2px $primary-cta-color;
+        }
     }
 
     &__poster {
