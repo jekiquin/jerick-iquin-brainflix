@@ -1,4 +1,4 @@
-@use '../../partials/1-helpers/placeholders' as *;
+@use '../../partials/1-helpers/helpers' as *;
 
 .header__button {
     @extend %button;
@@ -10,4 +10,10 @@
 
 .comments__form-submit {
     @extend %button;
+
+    @include screen(map-get($screen, "tablet")) {
+        margin-left: 1.5rem;
+        margin-right: 4rem;
+        max-width: 16rem;
+    }
 }

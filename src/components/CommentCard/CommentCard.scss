@@ -11,14 +11,26 @@
         flex-grow: 1;
     }
 
-    &-name-date{
+    &-name-date {
         @extend %flex;
         justify-content: space-between;
         margin-bottom: 1rem;
+
+        @include screen(map-get($screen, "tablet")) {
+            justify-content: flex-start;
+        }
+    }
+
+    &-name {
+        margin-right: 1.6rem;
     }
 
     &-date {
         color: $label-color;
+    }
+
+    &-paragraph {
+        max-width: 62.4rem;
     }
 
 }

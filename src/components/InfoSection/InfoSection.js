@@ -17,7 +17,7 @@ function InfoSection({ videoInfo }) {
             <h1 className="content__info-heading">{videoInfo.title}</h1>
             <div className="content__info-heading-container">
                 <div className="content__info-cite">
-                    <h2 className="content__info-channel">{videoInfo.channel}</h2>
+                    <p className="content__info-channel">{videoInfo.channel}</p>
                     <p className="content__info-date">{new Date(videoInfo.timestamp).toLocaleDateString()}</p>
                 </div>
                 <div className="content__info-stats">

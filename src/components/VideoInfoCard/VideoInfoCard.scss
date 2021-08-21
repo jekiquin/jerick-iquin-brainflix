@@ -7,13 +7,14 @@
         align-items: flex-start;
         margin-bottom: 2.4rem;
         cursor: pointer;
+        max-width: 38.4rem;
     }
 
     &__poster {
         border-radius: .4rem;
         object-fit: cover;
-        width: 12rem;
-        height: 7rem;
+        width: 18rem;
+        height: 10.5rem;
         margin-right: 1.6rem;
         flex-shrink: 0;
     }

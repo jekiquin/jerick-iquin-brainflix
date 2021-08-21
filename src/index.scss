@@ -1,4 +1,4 @@
-@use './partials/1-helpers/variables' as *;
+@use './partials/1-helpers/helpers' as *;
 @use './partials/2-basics/typography' as *;
 
 html {
@@ -22,29 +22,65 @@ h1 {
     font-size: 2.4rem;
     line-height: 3.2rem;
     font-weight: 700;
+
+    @include screen(map-get($screen, "tablet")) {
+        font-size: 3.6rem;
+        line-height: 4.4rem;
+    }
 }
 
 h2 {
     font-size: 1.4rem;
     line-height: 2.2rem;
     font-weight: 600;
+
+    @include screen(map-get($screen, "tablet")) {
+        font-size: 2.4rem;
+        line-height: 3.2rem;
+    }
+}
+
+h3 {
+    font-weight: 600;
+
+    @include screen(map-get($screen, "tablet")) {
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+    }
+    
+}
+
+h4 {
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+    font-weight: 400;
+
+    @include screen(map-get($screen, "tablet")) {
+        font-size: 1.4rem;
+        line-height: 2.2rem;
+    }
 }
 
 h5 {
     font-size: 1.2rem;
     line-height: 2.0rem;
-    font-weight: 600;
+    font-weight: 400;
+
+    @include screen(map-get($screen, "tablet")) {
+        font-size: 1.2rem;
+        line-height: 2.2rem;
+    }
 }
 
 
 p {
-    font-size: 1.3rem;
-    line-height: 1.8rem;
-    font-weight: 400;
+    @extend h4;
 }
 
 li {
-    font-size: 1.3rem;
-    line-height: 1.8rem;
-    font-weight: 400;
+    @extend h4;
+
+    @include screen(map-get($screen, "tablet")) {
+        line-height: 2.0rem;
+    }
 }
