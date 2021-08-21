@@ -7,6 +7,11 @@
     margin-left: map-get($pad, "mobile");
     flex-grow: 1;
 
+    &-label {
+        text-transform: uppercase;
+        color: $label-color;
+    }
+
     &-input-container {
         @extend %flex--column;
         flex-grow: 1;
@@ -24,6 +29,10 @@
         resize: none;
         outline: none;
 
+        &::placeholder {
+            color: $label-color;
+        }
+        
         &:focus {
             border: 2px solid $primary-cta-color;
         }
