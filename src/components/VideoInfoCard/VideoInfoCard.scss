@@ -6,6 +6,7 @@
         @extend %flex;
         align-items: flex-start;
         margin-bottom: 2.4rem;
+        cursor: pointer;
     }
 
     &__poster {
