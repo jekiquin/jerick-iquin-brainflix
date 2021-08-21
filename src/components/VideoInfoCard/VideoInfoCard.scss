@@ -13,8 +13,8 @@
     &__poster {
         border-radius: .4rem;
         object-fit: cover;
-        width: 18rem;
-        height: 10.5rem;
+        width: 14rem;
+        height: 8rem;
         margin-right: 1.6rem;
         flex-shrink: 0;
     }
@@ -25,6 +25,6 @@
     }
 
     &__title {
-        margin-bottom: 1.6rem;
+        margin-bottom: 0.8rem;
     }
 }

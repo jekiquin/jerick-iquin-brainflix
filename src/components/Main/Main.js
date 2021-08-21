@@ -32,8 +32,10 @@ class Main extends Component{
             <main className="content">
                 <VideoSection selectedVideo={''} selectedPoster={this.selectInfo(this.state.currentId).image}/>
                 <div className="content__container">
-                    <InfoSection videoInfo={this.selectInfo(this.state.currentId)} />
-                    <CommentSection commentsInfo={this.selectInfo(this.state.currentId).comments} />
+                    <div className="content__main">
+                        <InfoSection videoInfo={this.selectInfo(this.state.currentId)} />
+                        <CommentSection commentsInfo={this.selectInfo(this.state.currentId).comments} />
+                    </div>
                     <VideoListSection currentId={this.state.currentId} handleClick={this.selectVideo} />
                 </div>
             </main>

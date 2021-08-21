@@ -55,6 +55,10 @@
 
     &-ctx {
         padding-top: 2.4rem;
+
+        @include screen(map-get($screen, "desktop")) {
+            margin-top: 4rem;
+        }
     }
 
     &-paragraph {

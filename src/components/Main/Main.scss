@@ -1,5 +1,17 @@
-@use '../../partials/1-helpers/placeholders' as *;
+@use '../../partials/1-helpers/helpers' as *;
 
-.content__container {
-    @extend %limiting-container;    
+.content {
+    &__container {
+        @extend %limiting-container;   
+        
+        @include screen(map-get($screen, "desktop")) {
+            display: flex;
+        }
+    }
+
+    &__main {
+        @include screen(map-get($screen, "desktop")) {
+            width: 71.2rem;
+        }
+    }
 }

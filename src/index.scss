@@ -76,11 +76,3 @@ h5 {
 p {
     @extend h4;
 }
-
-li {
-    @extend h4;
-
-    @include screen(map-get($screen, "tablet")) {
-        line-height: 2.0rem;
-    }
-}

@@ -1,8 +1,16 @@
 @use '../../partials/1-helpers/helpers' as *;
 
-.video-list__heading {
-    margin-top: 4rem;
-    margin-bottom: 4rem;
-    text-transform: uppercase;
-    color: $label-color;
+.video-list {
+
+    &__heading {
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+        text-transform: uppercase;
+        color: $label-color;
+    }
+
+    @include screen(map-get($screen, "tablet")) {
+        padding-left: map-get($pad, "tablet");
+    }
 }
+

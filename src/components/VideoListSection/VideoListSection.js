@@ -19,7 +19,7 @@ class VideoListSection extends Component {
     render() {
         return (
             <section className="video-list">
-                <h2 className="video-list__heading">Next Video</h2>
+                <h3 className="video-list__heading">Next Video</h3>
                 {this.state.videos.filter(video => video.id !== this.props.currentId).map(video => {
                     return (
                         <VideoInfoCard key={video.id} video={video} handleClick={this.props.handleClick} />
