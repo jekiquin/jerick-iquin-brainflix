@@ -2,6 +2,7 @@
 
 .comments__comment-card {
     @extend %flex;
+    align-items: flex-start;
     padding-top: map-get($pad, "mobile");
     padding-bottom: map-get($pad, "mobile");
     border-bottom: 1px solid $border-color;
