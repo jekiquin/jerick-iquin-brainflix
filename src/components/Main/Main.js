@@ -10,10 +10,12 @@ import './Main.scss';
 
 // data
 import videos from '../../data/video-details.json';
+import videoList from '../../data/videos.json';
 
 class Main extends Component{
     state = {
         videos,
+        videoList,
         currentId: videos[0].id,
     }
 
@@ -36,7 +38,7 @@ class Main extends Component{
                         <InfoSection videoInfo={this.selectInfo(this.state.currentId)} />
                         <CommentSection commentsInfo={this.selectInfo(this.state.currentId).comments} />
                     </div>
-                    <VideoListSection currentId={this.state.currentId} handleClick={this.selectVideo} />
+                    <VideoListSection videoList={this.state.videoList} currentId={this.state.currentId} handleClick={this.selectVideo} />
                 </div>
             </main>
         )
