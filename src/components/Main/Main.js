@@ -17,7 +17,6 @@ class Main extends Component{
         currentId: videoList[0].id,
     }
 
-    // static method
     selectInfo(id) {
         return this.state.videos.find(video => video.id === id);
     }

@@ -17,7 +17,7 @@ function CommentSection({ commentsInfo }) {
         <section className="comments">
             <h2 className="comments__count">{countMessage()}</h2>
             <div className="comments__form-container">
-                <ProfilePicture className='comments__form-profile-picture'/>
+                <ProfilePicture className="comments__form-profile-picture"/>
                 <Form />
             </div>
             <CommentsList commentsInfo={commentsInfo} />

@@ -1,0 +1,28 @@
+@use '../../partials/1-helpers/helpers' as *;
+
+.video-list {
+
+    &__card {
+        @extend %flex;
+        align-items: flex-start;
+        margin-bottom: 2.4rem;
+    }
+
+    &__poster {
+        border-radius: .4rem;
+        object-fit: cover;
+        width: 12rem;
+        height: 7rem;
+        margin-right: 1.6rem;
+        flex-shrink: 0;
+    }
+
+    &__ctx {
+        @extend %flex--column;
+        align-items: flex-start;
+    }
+
+    &__title {
+        margin-bottom: 1.6rem;
+    }
+}

@@ -6,9 +6,15 @@
     padding-bottom: map-get($pad, "mobile");
     border-bottom: 1px solid $border-color;
 
+    &-ctx {
+        width: 100%;
+        flex-grow: 1;
+    }
+
     &-name-date{
         @extend %flex;
         justify-content: space-between;
         margin-bottom: 1rem;
     }
+
 }
