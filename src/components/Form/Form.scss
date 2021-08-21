@@ -34,6 +34,9 @@
         resize: none;
         outline: none;
 
+        &--error {
+            border-color: red;
+        }
 
         &::placeholder {
             color: $label-color;
