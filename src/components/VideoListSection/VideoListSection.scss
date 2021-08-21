@@ -9,7 +9,7 @@
         color: $label-color;
     }
 
-    @include screen(map-get($screen, "tablet")) {
+    @include screen(map-get($screen, "desktop")) {
         padding-left: map-get($pad, "tablet");
     }
 }

@@ -56,13 +56,13 @@
     &-ctx {
         padding-top: 2.4rem;
 
-        @include screen(map-get($screen, "desktop")) {
+        @include screen(map-get($screen, "tablet")) {
             margin-top: 4rem;
         }
     }
 
     &-paragraph {
-        max-width: 64rem;
+        max-width: 65ch;
     }
 
     @include screen(map-get($screen, "tablet")) {
