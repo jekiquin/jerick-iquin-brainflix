@@ -9,12 +9,12 @@ import VideoListSection from '../VideoListSection/VideoListSection';
 import './Main.scss';
 
 // data
-import videoList from '../../data/video-details.json';
+import videos from '../../data/video-details.json';
 
 class Main extends Component{
     state = {
-        videos: videoList,
-        currentId: videoList[0].id,
+        videos,
+        currentId: videos[0].id,
     }
 
     selectInfo(id) {
