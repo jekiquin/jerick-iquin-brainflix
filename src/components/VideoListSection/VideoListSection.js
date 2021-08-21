@@ -1,5 +1,6 @@
 // react import
 import { Component } from 'react';
+import './VideoListSection.scss';
 
 // component imports
 import VideoInfoCard from '../VideoInfoCard/VideoInfoCard';
