@@ -1,3 +1,5 @@
+@use '../../partials/1-helpers/helpers' as *;
+
 .header__search-input {
     background-image: url('../../assets/Images/Icons/Icon-search.svg');
     background-repeat: no-repeat;
@@ -6,5 +8,9 @@
     border-radius: 4px;
     width: 100%;
     height: 4.9rem;
+    outline: none;
 
+    &:focus {
+        border: 2px solid $primary-cta-color;
+    }
 }
