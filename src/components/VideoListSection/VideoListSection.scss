@@ -11,6 +11,7 @@
 
     @include screen(map-get($screen, "desktop")) {
         padding-left: map-get($pad, "tablet");
+        border-left: 1px solid $border-color;
     }
 }
 
