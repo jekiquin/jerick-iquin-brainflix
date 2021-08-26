@@ -30,15 +30,17 @@ class Main extends Component{
     }
 
     render() {
+        const { videoList, currentId } = this.state;
+        
         return(
             <main className="content">
-                <VideoSection selectedVideo={''} selectedPoster={this.selectInfo(this.state.currentId).image}/>
+                <VideoSection selectedVideo={''} selectedPoster={this.selectInfo(currentId).image}/>
                 <div className="content__container">
                     <div className="content__main">
-                        <InfoSection videoInfo={this.selectInfo(this.state.currentId)} />
-                        <CommentSection commentsInfo={this.selectInfo(this.state.currentId).comments} />
+                        <InfoSection videoInfo={this.selectInfo(currentId)} />
+                        <CommentSection commentsInfo={this.selectInfo(currentId).comments} />
                     </div>
-                    <VideoListSection videoList={this.state.videoList} currentId={this.state.currentId} handleClick={this.selectVideo} />
+                    <VideoListSection videoList={videoList} currentId={currentId} handleClick={this.selectVideo} />
                 </div>
             </main>
         )

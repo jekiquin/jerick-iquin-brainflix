@@ -11,36 +11,37 @@ import likeIcon from '../../assets/Images/Icons/Icon-likes.svg';
 
 
 function InfoSection({ videoInfo }) {
+    const { title, channel, timestamp, description } = videoInfo;
+    const statsCount = [seenIcon, likeIcon]
+        .map(icon => {
+            let statCount;
+            if (icon.includes('likes')) {
+                statCount = videoInfo.likes;
+            } else if (icon.includes('views')) {
+                statCount = videoInfo.views;
+            }
+            return <Stats
+                        key={uuid()}
+                        icon={icon}
+                        statCount={statCount}
+                    />
+        }) 
 
     return(
         <section className="content__info">
-            <h1 className="content__info-heading">{videoInfo.title}</h1>
+            <h1 className="content__info-heading">{title}</h1>
             <div className="content__info-heading-container">
                 <div className="content__info-cite">
-                    <p className="content__info-channel">{videoInfo.channel}</p>
-                    <p className="content__info-date">{new Date(videoInfo.timestamp).toLocaleDateString()}</p>
+                    <p className="content__info-channel">{channel}</p>
+                    <p className="content__info-date">{new Date(timestamp).toLocaleDateString()}</p>
                 </div>
                 <div className="content__info-stats">
-                    {
-                        [seenIcon, likeIcon].map(icon => {
-                            let statCount;
-                            if (icon.includes('likes')) {
-                                statCount = videoInfo.likes
-                            } else if (icon.includes('views')) {
-                                statCount = videoInfo.views;
-                            }
-                            return <Stats
-                                        key={uuid()}
-                                        icon={icon}
-                                        statCount={statCount}
-                                    />
-                        })  
-                    }
+                    { statsCount }
                 </div>
             </div>
             <div className="content__info-ctx">
                 <p className="content__info-paragraph">
-                    {videoInfo.description}
+                    {description}
                 </p>
             </div>
         </section>

@@ -5,7 +5,7 @@ function CommentsList({ commentsInfo }) {
         <div className="comments__comments">
         {commentsInfo.map(comment => {
             return (
-                <CommentCard key={comment.id} comment={comment} />
+                <CommentCard key={comment.id} commentObj={comment} />
             )
         })}
     </div>
