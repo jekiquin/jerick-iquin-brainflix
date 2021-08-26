@@ -1,13 +1,12 @@
 // react-router-dom
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
+// import pages
 import Header from './components/Header/Header';
 import HomePage from './pages/HomePage/HomePage';
 import UploadPage from './pages/UploadPage/UploadPage';
 
-
 function App() {
-
   return (
     <Router>
       <div className="App">
