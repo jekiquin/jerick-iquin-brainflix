@@ -1,18 +1,20 @@
-import React from 'react';
 import Header from './components/Header/Header';
 import Main from './components/Main/Main';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 
-class App extends React.Component {
+function App() {
 
-  render() {
-    return (
+  return (
+    <Router>
       <div className="App">
         <Header />
         <Main />     
       </div>
-    );
-  }
+    </Router>
+
+  );
+
 }
 
 export default App;
