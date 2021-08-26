@@ -2,7 +2,7 @@
 import './CommentSection.scss';
 
 // component import
-import Form from '../Form/Form';
+import CommentForm from '../CommentForm/CommentForm';
 import CommentsList from '../CommentsList/CommentsList';
 import ProfilePicture from '../ProfilePicture/ProfilePicture';
 
@@ -18,7 +18,7 @@ function CommentSection({ commentsInfo }) {
             <h2 className="comments__count">{countMessage()}</h2>
             <div className="comments__form-container">
                 <ProfilePicture className="comments__form-profile-picture"/>
-                <Form />
+                <CommentForm />
             </div>
             <CommentsList commentsInfo={commentsInfo} />
         </section>

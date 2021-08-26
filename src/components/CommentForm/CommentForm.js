@@ -1,11 +1,11 @@
 // sass import
-import './Form.scss';
+import './CommentForm.scss';
 
 // image imports
 import PageButton from '../PageButton/PageButton';
 
 
-function Form() {
+function CommentForm() {
     const handleSubmit = event => {
         event.preventDefault();
         const commentInput = event.target.comment;
@@ -30,4 +30,4 @@ function Form() {
     )
 }
 
-export default Form;
+export default CommentForm;
