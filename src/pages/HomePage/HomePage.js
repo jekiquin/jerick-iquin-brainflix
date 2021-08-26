@@ -30,6 +30,8 @@ class HomePage extends Component{
             this.setState({
                 currentId: newId
             })
+            // move the screen to the top to view the current video
+            window.scrollTo(0, 0);
         }
     }
 
