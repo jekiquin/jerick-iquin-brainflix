@@ -1,13 +1,5 @@
 @use '../../partials/1-helpers/helpers' as *;
 
-.header__button {
-    @extend %button;
-
-    &::before {
-        content: url('../../assets/Images/Icons/Icon-upload.svg');
-    }
-}
-
 .comments__form-submit {
     @extend %button;
 

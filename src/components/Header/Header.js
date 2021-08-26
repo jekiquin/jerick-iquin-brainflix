@@ -1,12 +1,18 @@
+// import styling and react-router-dom
 import './Header.scss';
+import { Link } from 'react-router-dom';
+
+// import components
 import HeaderNav from '../HeaderNav/HeaderNav';
+
+// import data
 import logo from '../../assets/Images/Logo/Logo-brainflix.svg';
 
 function Header() {
     return (
         <header className="header">
             <div className="header__container">
-                <a href="/"><img className="header__logo" src={logo} alt='website logo' /></a>
+                <Link to="/"><img className="header__logo" src={logo} alt='website logo' /></Link>
                 <HeaderNav />
             </div>
         </header>

@@ -1,6 +1,9 @@
+// react-router-dom
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
 import Header from './components/Header/Header';
 import HomePage from './pages/HomePage/HomePage';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import UploadPage from './pages/UploadPage/UploadPage';
 
 
 function App() {
@@ -9,7 +12,10 @@ function App() {
     <Router>
       <div className="App">
         <Header />
-        <HomePage />     
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route path="/upload-video" component={UploadPage} />
+        </Switch>  
       </div>
     </Router>
 
