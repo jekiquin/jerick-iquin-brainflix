@@ -1,5 +1,5 @@
 import Header from './components/Header/Header';
-import Main from './components/Main/Main';
+import HomePage from './pages/HomePage/HomePage';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 
@@ -9,7 +9,7 @@ function App() {
     <Router>
       <div className="App">
         <Header />
-        <Main />     
+        <HomePage />     
       </div>
     </Router>
 

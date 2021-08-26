@@ -1,12 +1,12 @@
 // imports
 import { Component } from 'react';
-import VideoSection from '../VideoSection/VideoSection';
-import InfoSection from '../InfoSection/InfoSection';
-import CommentSection from '../CommentSection/CommentSection';
-import VideoListSection from '../VideoListSection/VideoListSection';
+import VideoSection from '../../components/VideoSection/VideoSection';
+import InfoSection from '../../components/InfoSection/InfoSection';
+import CommentSection from '../../components/CommentSection/CommentSection';
+import VideoListSection from '../../components/VideoListSection/VideoListSection';
 
 // sass
-import './Main.scss';
+import './HomePage.scss';
 
 // data
 import videos from '../../data/video-details.json';
