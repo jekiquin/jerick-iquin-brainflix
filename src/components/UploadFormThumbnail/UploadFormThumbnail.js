@@ -1,3 +1,6 @@
+// import styling
+import './UploadFormThumbnail.scss';
+
 // import data
 import videoThumbnail from '../../assets/Images/Profile/Upload-video-preview.jpg';
 

@@ -8,8 +8,7 @@
     flex-grow: 1;
 
     &-label {
-        text-transform: uppercase;
-        color: $label-color;
+        @extend %labels;
     }
 
     &-input-container {
@@ -25,26 +24,12 @@
     }
 
     &-input {
+        @extend %input-fields;
         margin-top: 0.8rem;
         margin-bottom: 1.6rem;
         width: 100%;
-        padding: 1rem;
         height: 10rem;
-        border-radius: 0.4rem;
         resize: none;
-        outline: none;
-
-        &--error {
-            border-color: red;
-        }
-
-        &::placeholder {
-            color: $label-color;
-        }
-        
-        &:focus {
-            border: 2px solid $primary-cta-color;
-        }
 
         @include screen(map-get($screen, "tablet")) {
             width: 44rem;

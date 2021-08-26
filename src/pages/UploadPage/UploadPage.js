@@ -1,7 +1,7 @@
 // import styling and react-router-dom
 import { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-
+import './UploadPage.scss';
 
 // import components
 import UploadFormThumbnail from '../../components/UploadFormThumbnail/UploadFormThumbnail';
@@ -28,14 +28,16 @@ class UploadPage extends Component {
 
         return (
             <main className="upload">
-                <h1 className="upload__heading">Upload Video</h1>
-                <form className="upload__form" onSubmit={e => this.handleSubmit(e)} autoComplete="off">
-                    <div className="upload__form-container">
-                        <UploadFormThumbnail />
-                        <UploadFormInputs />
-                    </div>
-                    <UploadFormButtons />
-                </form>
+                <div className="upload__container">
+                    <h1 className="upload__heading">Upload Video</h1>
+                    <form className="upload__form" onSubmit={e => this.handleSubmit(e)} autoComplete="off">
+                        <div className="upload__form-container">
+                            <UploadFormThumbnail />
+                            <UploadFormInputs />
+                        </div>
+                        <UploadFormButtons />
+                    </form>
+                </div>
             </main>
         )
     }

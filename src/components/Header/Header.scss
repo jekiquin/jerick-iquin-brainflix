@@ -1,10 +1,12 @@
 @use '../../partials/1-helpers/helpers' as *;
 
 .header {
+    border-bottom: 1px solid $border-color;
 
     &__container {
         @extend %flex--column;
         @extend %limiting-container;
+        
 
         @include screen(map-get($screen, "tablet")) {
             flex-direction: row;

@@ -1,0 +1,23 @@
+@use '../../partials/1-helpers/helpers' as *;
+
+.upload__form-thumbnail {
+    
+    &-label {
+        @extend %labels;
+    }
+
+    &-image {
+        object-fit: cover;
+        width: min(100%, 48rem);
+        border-radius: 4px;
+        margin-bottom: 3.2rem;
+
+        @include screen (map-get($screen, "tablet")) {
+            margin-bottom: 4rem;
+            width: 34.4rem;
+            height: 18.3rem;
+        }
+    }
+
+}
+

@@ -1,0 +1,27 @@
+@use '../../partials/1-helpers/helpers' as *;
+
+.upload__form-buttons {
+    @extend %flex--column;
+
+    .upload__form-cancel {
+        display: block;
+        text-transform: uppercase;
+        margin-bottom: 2.4rem;
+        margin-top: 2.4rem;
+        text-align: center;
+        color: $primary-cta-color;
+        font-weight: 600;
+
+        @include screen(map-get($screen, "tablet")) {
+            margin: 0;
+        }        
+    }
+
+    @include screen(map-get($screen, "tablet")) {
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+        align-items: center;
+    }
+}

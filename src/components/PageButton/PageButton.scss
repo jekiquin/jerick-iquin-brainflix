@@ -9,3 +9,12 @@
         max-width: 16rem;
     }
 }
+
+.upload__form-submit {
+    @extend %button;
+
+    @include screen(map-get($screen, "tablet")) {
+        width: 16rem;
+        margin-left: 4.8rem;
+    }
+}

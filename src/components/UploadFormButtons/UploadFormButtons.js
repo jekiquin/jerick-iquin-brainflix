@@ -1,5 +1,6 @@
-// import react-router-dom
+// import styling and react-router-dom
 import { Link } from 'react-router-dom';
+import './UploadFormButtons.scss';
 
 // import component
 import PageButton from '../../components/PageButton/PageButton';
