@@ -19,6 +19,11 @@ class HomePage extends Component{
         currentId: videos[0].id
     }
 
+    componentDidMount() {
+        // move the screen to the top to view the current video
+        window.scrollTo(0, 0);
+    }
+
     componentDidUpdate(prevProps) {
         if (this.props.match.params.videoId !== prevProps.match.params.videoId) {
             let newId;
