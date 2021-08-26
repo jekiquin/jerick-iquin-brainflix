@@ -12,11 +12,25 @@ import './HomePage.scss';
 import videos from '../../data/video-details.json';
 import videoList from '../../data/videos.json';
 
-class Main extends Component{
+class HomePage extends Component{
     state = {
         videos,
         videoList,
-        currentId: videos[0].id,
+        currentId: videos[0].id
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.match.params.videoId !== prevProps.match.params.videoId) {
+            let newId;
+            if (!this.props.match.params.videoId) {
+                newId = videos[0].id;
+            } else {
+                newId = this.props.match.params.videoId;
+            }
+            this.setState({
+                currentId: newId
+            })
+        }
     }
 
     selectInfo(id) {
@@ -40,11 +54,11 @@ class Main extends Component{
                         <InfoSection videoInfo={this.selectInfo(currentId)} />
                         <CommentSection commentsInfo={this.selectInfo(currentId).comments} />
                     </div>
-                    <VideoListSection videoList={videoList} currentId={currentId} handleClick={this.selectVideo} />
+                    <VideoListSection videoList={videoList} currentId={currentId}/>
                 </div>
             </main>
         )
     }
 };
 
-export default Main;
+export default HomePage;

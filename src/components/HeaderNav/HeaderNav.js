@@ -12,7 +12,7 @@ function HeaderNav() {
             <SearchBar />
             <div className="header__upload">
                 {/* <PageButton submit={false} className='header__button' value='UPLOAD' /> */}
-                <Link to="/upload-video" className="header__button">&nbsp;UPLOAD</Link>
+                <Link to="/upload" className="header__button">&nbsp;UPLOAD</Link>
                 <ProfilePicture className='header__profile-picture'/>
             </div>
         </div>
