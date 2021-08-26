@@ -22,6 +22,14 @@
             @include screen(map-get($screen, "tablet")) {
                 margin-bottom: 4rem;
             }
+
+            @include screen(map-get($screen, "desktop")) {
+                height: 10.5rem;
+            }
         }
+    }
+
+    @include screen(map-get($screen, "desktop")) {
+        margin-left: 2.4rem;
     }
 }

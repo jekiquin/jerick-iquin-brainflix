@@ -17,8 +17,15 @@
     }
 
     &__form-container {
+        @extend %flex--column;
+        align-items: flex-start;
+
         @include screen (map-get($screen, "tablet")) {
             border-bottom: 2px solid $border-color;
+        }
+
+        @include screen (map-get($screen, "desktop")) {
+            flex-direction: row;
         }
     }
 }
