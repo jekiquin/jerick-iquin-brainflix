@@ -61,21 +61,3 @@
     text-transform: uppercase;
 }
 
-%input-fields {
-    border-radius: 0.4rem;
-    padding: 1rem;
-    outline: none;
-    border-width: 1px;
-
-    &--error {
-        border-color: red;
-    }
-
-    &::placeholder {
-        color: $label-color;
-    }
-    
-    &:focus {
-        border: 2px solid $primary-cta-color;
-    }
-}

@@ -24,7 +24,7 @@
     }
 
     &-input {
-        @extend %input-fields;
+        @include input-fields;
         margin-top: 0.8rem;
         margin-bottom: 1.6rem;
         width: 100%;

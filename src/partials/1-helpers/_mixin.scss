@@ -1,5 +1,27 @@
+@use './variables' as *;
+
 @mixin screen($breakpoint) {
     @media (min-width: #{$breakpoint}) {
         @content;
+    }
+}
+
+@mixin input-fields {
+    border-radius: 0.4rem;
+    padding: 1rem;
+    outline: none;
+    border-width: 1px;
+
+    &--error {
+        border-color: red;
+        border-width: 2px;
+    }
+
+    &::placeholder {
+        color: $label-color;
+    }
+    
+    &:focus {
+        border: 2px solid $primary-cta-color;
     }
 }
