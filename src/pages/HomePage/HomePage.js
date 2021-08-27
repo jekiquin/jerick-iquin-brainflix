@@ -77,7 +77,7 @@ class HomePage extends Component{
         
         return(
             <main className="content">
-                <VideoSection videoId={'currentVideoInfo.id'} selectedVideo={currentVideoInfo.video + API_KEY_QSTRING} selectedPoster={currentVideoInfo.image}/>
+                <VideoSection videoId={currentVideoInfo.id} selectedVideo={currentVideoInfo.video + API_KEY_QSTRING} selectedPoster={currentVideoInfo.image}/>
                 <div className="content__container">
                     <div className="content__main">
                         <InfoSection videoInfo={currentVideoInfo} />
