@@ -21,19 +21,16 @@ class HomePage extends Component{
 
     componentDidMount() {
         // move the screen to the top to view the current video
-        brainflix.get(`/videos${API_KEY_QSTRING}`)
-            .then(response => {
-                this.setState({
-                    videoList: response.data
-                })
-                return response.data[0].id;
-            })
+        this.getVideoList()
             .then(id => {
                 this.getCurrentVideoInfo(id);
             })
             .then(() => {
                  // move the screen to the top to view the current video
                 window.scrollTo(0, 0);
+            })
+            .catch(error => {
+                console.log('Error loading videos!');
             })
         
     }
@@ -52,8 +49,18 @@ class HomePage extends Component{
         }
     }
 
+    getVideoList = () => {
+        return  brainflix.get(`/videos${API_KEY_QSTRING}`)
+                    .then(response => {
+                        this.setState({
+                            videoList: response.data
+                        })
+                        return response.data[0].id;
+                    })
+    }
+
     getCurrentVideoInfo = id => {
-        brainflix.get(`/videos/${id}${API_KEY_QSTRING}`)
+        return brainflix.get(`/videos/${id}${API_KEY_QSTRING}`)
             .then(response => {
                 this.setState({
                     currentVideoInfo: response.data
@@ -70,7 +77,7 @@ class HomePage extends Component{
         
         return(
             <main className="content">
-                <VideoSection videoId={currentVideoInfo.id} selectedVideo={currentVideoInfo.video + API_KEY_QSTRING} selectedPoster={currentVideoInfo.image}/>
+                <VideoSection videoId={'currentVideoInfo.id'} selectedVideo={currentVideoInfo.video + API_KEY_QSTRING} selectedPoster={currentVideoInfo.image}/>
                 <div className="content__container">
                     <div className="content__main">
                         <InfoSection videoInfo={currentVideoInfo} />

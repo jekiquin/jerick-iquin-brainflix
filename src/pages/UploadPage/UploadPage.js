@@ -18,7 +18,11 @@ class UploadPage extends Component {
         this.setState({
             redirect: true
         });
-        alert('Uploaded!')
+        const message = 
+        `Uploaded!
+        Title: ${event.target.title.value}
+        Descriptions: ${event.target.description.value}`
+        alert(message);
     }
 
     render() {
