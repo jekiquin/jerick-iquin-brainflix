@@ -1,67 +1,82 @@
-// imports
-import { Component } from 'react';
+// imports styling and react
+import { Component, createRef } from 'react';
+import './HomePage.scss';
+
+// imports components
 import VideoSection from '../../components/VideoSection/VideoSection';
 import InfoSection from '../../components/InfoSection/InfoSection';
 import CommentSection from '../../components/CommentSection/CommentSection';
 import VideoListSection from '../../components/VideoListSection/VideoListSection';
 
-// sass
-import './HomePage.scss';
+// import axios
+import { brainflix, API_KEY } from '../../peripheral/api';
 
-// data
-import videos from '../../data/video-details.json';
-import videoList from '../../data/videos.json';
+const API_KEY_QSTRING = `?api_key=${API_KEY}`;
 
 class HomePage extends Component{
     state = {
-        videos,
-        videoList,
-        currentId: videos[0].id
+        videoList: [],
+        currentVideoInfo: null
     }
 
     componentDidMount() {
         // move the screen to the top to view the current video
-        window.scrollTo(0, 0);
+        brainflix.get(`/videos${API_KEY_QSTRING}`)
+            .then(response => {
+                this.setState({
+                    videoList: response.data
+                })
+                return response.data[0].id;
+            })
+            .then(id => {
+                this.getCurrentVideoInfo(id);
+            })
+            .then(() => {
+                 // move the screen to the top to view the current video
+                window.scrollTo(0, 0);
+            })
+        
     }
 
     componentDidUpdate(prevProps) {
-        if (this.props.match.params.videoId !== prevProps.match.params.videoId) {
-            let newId;
-            if (!this.props.match.params.videoId) {
-                newId = videos[0].id;
+        const { videoList } = this.state;
+        const { videoId } = this.props.match.params
+        if (videoId !== prevProps.match.params.videoId) {
+            if (!videoId) {
+                this.getCurrentVideoInfo(videoList[0].id)
             } else {
-                newId = this.props.match.params.videoId;
+                this.getCurrentVideoInfo(videoId)
             }
-            this.setState({
-                currentId: newId
-            })
             // move the screen to the top to view the current video
             window.scrollTo(0, 0);
         }
     }
 
-    selectInfo(id) {
-        return this.state.videos.find(video => video.id === id);
-    }
-
-    selectVideo = (id) => {
-        this.setState({
-            currentId: id
-        })
+    getCurrentVideoInfo = id => {
+        brainflix.get(`/videos/${id}?api_key=${API_KEY}`)
+            .then(response => {
+                this.setState({
+                    currentVideoInfo: response.data
+                })
+            })
     }
 
     render() {
-        const { videoList, currentId } = this.state;
+        const { videoList, currentVideoInfo } = this.state;
+
+        if (!currentVideoInfo) {
+            return <h1>Loading...</h1>
+        }
         
         return(
             <main className="content">
-                <VideoSection selectedVideo={''} selectedPoster={this.selectInfo(currentId).image}/>
+                <VideoSection videoId={currentVideoInfo.id} selectedVideo={currentVideoInfo.video + API_KEY_QSTRING} selectedPoster={currentVideoInfo.image}/>
                 <div className="content__container">
                     <div className="content__main">
-                        <InfoSection videoInfo={this.selectInfo(currentId)} />
-                        <CommentSection commentsInfo={this.selectInfo(currentId).comments} />
+                        <InfoSection videoInfo={currentVideoInfo} />
+                        <CommentSection commentsInfo={currentVideoInfo.comments} />
                     </div>
-                    <VideoListSection videoList={videoList} currentId={currentId}/>
+                    <VideoListSection videoList={videoList} currentId={currentVideoInfo.id}/>
                 </div>
             </main>
         )
