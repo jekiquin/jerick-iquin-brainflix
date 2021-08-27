@@ -18,18 +18,19 @@ class VideoSection extends Component {
 
     componentDidUpdate(prevProps) {
         const { videoId } = this.props;
-        const { videoNode } = this.state;
-        console.log(videoId);
-        console.log(prevProps.videoId);
         if(videoId !== prevProps.videoId) {
-            videoNode.pause();
-            videoNode.currentTime = 0;
+            this.stopPlaying();
         }
     }
 
+    componentWillUnmount() {
+        this.stopPlaying();
+    }
+
     stopPlaying = () => {
-        const videoNode = this.videoRef.current;
-        videoNode.stop();
+        const { videoNode } = this.state;
+        videoNode.pause();
+        videoNode.currentTime = 0;
     }
 
     render() {
