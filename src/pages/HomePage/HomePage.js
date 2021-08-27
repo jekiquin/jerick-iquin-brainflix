@@ -1,5 +1,5 @@
 // imports styling and react
-import { Component, createRef } from 'react';
+import { Component } from 'react';
 import './HomePage.scss';
 
 // imports components
@@ -53,7 +53,7 @@ class HomePage extends Component{
     }
 
     getCurrentVideoInfo = id => {
-        brainflix.get(`/videos/${id}?api_key=${API_KEY}`)
+        brainflix.get(`/videos/${id}${API_KEY_QSTRING}`)
             .then(response => {
                 this.setState({
                     currentVideoInfo: response.data
