@@ -15,13 +15,20 @@ class UploadPage extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
+        const titleInput = event.target.title;
+        const descriptionInput = event.target.description;
+        if(titleInput.value.trim() === '') {
+            titleInput.classList.add('upload__form-inputs-input--error');
+            return;
+        }
+
         this.setState({
             redirect: true
         });
         const message = 
         `Uploaded!
-        Title: ${event.target.title.value}
-        Descriptions: ${event.target.description.value}`
+        Title: ${titleInput.value.trim()}
+        Descriptions: ${descriptionInput.value.trim()}`
         alert(message);
     }
 
