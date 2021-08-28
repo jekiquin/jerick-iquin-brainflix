@@ -32,21 +32,22 @@ class HomePage extends Component{
             .catch(error => {
                 console.log('Error loading videos!');
             })
-        
     }
 
-    componentDidUpdate(prevProps) {
-        const { videoList } = this.state;
+    componentDidUpdate(prevProps, prevState) {
         const { videoId } = this.props.match.params;
         if (videoId !== prevProps.match.params.videoId) {
-            if (!videoId) {
-                this.getCurrentVideoInfo(videoList[0].id)
-            } else {
-                this.getCurrentVideoInfo(videoId)
-            }
+            this.getCurrentVideoInfo(videoId)
             // move the screen to the top to view the current video
             window.scrollTo(0, 0);
-        }
+            return;
+        }  
+        
+        const currentComments = this.state.currentVideoInfo && this.state.currentVideoInfo.comments;
+        const prevComments = prevState.currentVideoInfo && prevState.currentVideoInfo.comments;
+        if(currentComments !== prevComments) {
+            this.getCurrentVideoInfo(videoId);
+        } 
     }
 
     getVideoList = () => {
@@ -60,6 +61,7 @@ class HomePage extends Component{
     }
 
     getCurrentVideoInfo = id => {
+        id = id || this.state.videoList[0].id;
         return brainflix.get(`/videos/${id}${API_KEY_QSTRING}`)
             .then(response => {
                 this.setState({
