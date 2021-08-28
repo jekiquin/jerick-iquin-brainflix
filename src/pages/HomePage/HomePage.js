@@ -37,7 +37,7 @@ class HomePage extends Component{
 
     componentDidUpdate(prevProps) {
         const { videoList } = this.state;
-        const { videoId } = this.props.match.params
+        const { videoId } = this.props.match.params;
         if (videoId !== prevProps.match.params.videoId) {
             if (!videoId) {
                 this.getCurrentVideoInfo(videoList[0].id)
