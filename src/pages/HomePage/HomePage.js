@@ -9,9 +9,9 @@ import CommentSection from '../../components/CommentSection/CommentSection';
 import VideoListSection from '../../components/VideoListSection/VideoListSection';
 
 // import axios
-import { brainflix, API_KEY } from '../../peripheral/api';
+import { brainflix, API_KEY_QSTRING } from '../../peripheral/api';
 
-const API_KEY_QSTRING = `?api_key=${API_KEY}`;
+const USER_NAME = 'Jerick Iquin';
 
 class HomePage extends Component{
     state = {
@@ -43,9 +43,9 @@ class HomePage extends Component{
             return;
         }  
         
-        const currentComments = this.state.currentVideoInfo && this.state.currentVideoInfo.comments;
-        const prevComments = prevState.currentVideoInfo && prevState.currentVideoInfo.comments;
-        if(currentComments !== prevComments) {
+        const currentCommentsLength = this.state.currentVideoInfo ? this.state.currentVideoInfo.comments.length : 0;
+        const prevCommentsLength = prevState.currentVideoInfo ? prevState.currentVideoInfo.comments.length : 0;
+        if(currentCommentsLength !== prevCommentsLength) {
             this.getCurrentVideoInfo(videoId);
         } 
     }
@@ -70,6 +70,39 @@ class HomePage extends Component{
             })
     }
 
+    handleSubmitComment = (event, videoId) => {
+        event.preventDefault();
+        const commentInput = event.target.comment;
+        if (commentInput.value.trim() === '') {
+            commentInput.classList.add('comments__form-input--error');
+            return
+        }
+        commentInput.classList.remove('comments__form-input--error');
+
+        brainflix.post(`/videos/${videoId}/comments${API_KEY_QSTRING}`, 
+            {
+                name: USER_NAME,
+                comment: commentInput.value.trim()
+            })
+            .then(() => {
+                event.target.reset();
+                this.getCurrentVideoInfo(videoId);
+
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+    }
+
+    handleDeleteComment = (videoId, commentId) => {
+        brainflix.delete(`/videos/${videoId}/comments/${commentId}${API_KEY_QSTRING}`)
+            .then(() => {
+                this.getCurrentVideoInfo(videoId);
+            }).catch(error => {
+                console.log(error);
+            })
+    }
+
     render() {
         const { videoList, currentVideoInfo } = this.state;
 
@@ -85,7 +118,7 @@ class HomePage extends Component{
                 <div className="content__container">
                     <div className="content__main">
                         <InfoSection videoInfo={currentVideoInfo} />
-                        <CommentSection commentsInfo={currentVideoInfo.comments} videoId={videoId}/>
+                        <CommentSection currentVideoInfo={currentVideoInfo} handleSubmit={this.handleSubmitComment} handleClick={this.handleDeleteComment}/>
                     </div>
                     <VideoListSection videoList={videoList} currentId={videoId}/>
                 </div>

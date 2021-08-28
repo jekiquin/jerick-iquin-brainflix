@@ -1,11 +1,13 @@
 import CommentCard from '../CommentCard/CommentCard';
 
-function CommentsList({ commentsInfo }) {
+// commentsInfo
+function CommentsList({ currentVideoInfo, handleClick }) {
+    const {comments, id} = currentVideoInfo;
     return (
         <div className="comments__comments">
-        {commentsInfo.sort((commentA, commentB) => commentB.timestamp - commentA.timestamp).map(comment => {
+        {comments.sort((commentA, commentB) => commentB.timestamp - commentA.timestamp).map(comment => {
             return (
-                <CommentCard key={comment.id} commentObj={comment} />
+                <CommentCard key={comment.id} commentObj={comment} videoId={id} handleClick={handleClick}/>
             )
         })}
     </div>

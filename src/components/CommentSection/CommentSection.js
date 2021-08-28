@@ -6,10 +6,12 @@ import CommentForm from '../CommentForm/CommentForm';
 import CommentsList from '../CommentsList/CommentsList';
 import ProfilePicture from '../ProfilePicture/ProfilePicture';
 
-function CommentSection({ commentsInfo, videoId }) {
+
+function CommentSection({ currentVideoInfo, handleSubmit, handleClick }) {
+    const { comments, id } = currentVideoInfo;
     function countMessage() {
-        let message = `${commentsInfo.length}`;
-        message += commentsInfo.length > 1 ? ' Comments' : ' Comment';
+        let message = `${comments.length}`;
+        message += comments.length > 1 ? ' Comments' : ' Comment';
         return message;
     }
 
@@ -18,9 +20,9 @@ function CommentSection({ commentsInfo, videoId }) {
             <h2 className="comments__count">{countMessage()}</h2>
             <div className="comments__form-container">
                 <ProfilePicture className="comments__form-profile-picture"/>
-                <CommentForm videoId={videoId}/>
+                <CommentForm videoId={id} handleSubmit={handleSubmit}/>
             </div>
-            <CommentsList commentsInfo={commentsInfo} />
+            <CommentsList currentVideoInfo={currentVideoInfo} handleClick={handleClick} />
         </section>
     )
 }
