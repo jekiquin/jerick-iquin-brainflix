@@ -74,6 +74,8 @@ class HomePage extends Component{
         if (!currentVideoInfo) {
             return <h1>Loading...</h1>
         }
+
+        const videoId = currentVideoInfo.id;
         
         return(
             <main className="content">
@@ -81,9 +83,9 @@ class HomePage extends Component{
                 <div className="content__container">
                     <div className="content__main">
                         <InfoSection videoInfo={currentVideoInfo} />
-                        <CommentSection commentsInfo={currentVideoInfo.comments} />
+                        <CommentSection commentsInfo={currentVideoInfo.comments} videoId={videoId}/>
                     </div>
-                    <VideoListSection videoList={videoList} currentId={currentVideoInfo.id}/>
+                    <VideoListSection videoList={videoList} currentId={videoId}/>
                 </div>
             </main>
         )

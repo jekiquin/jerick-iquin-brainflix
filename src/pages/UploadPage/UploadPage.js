@@ -21,6 +21,7 @@ class UploadPage extends Component {
             titleInput.classList.add('upload__form-inputs-input--error');
             return;
         }
+        titleInput.classList.remove('upload__form-inputs-input--error');
 
         this.setState({
             redirect: true

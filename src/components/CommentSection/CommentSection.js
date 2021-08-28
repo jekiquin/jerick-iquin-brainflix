@@ -6,7 +6,7 @@ import CommentForm from '../CommentForm/CommentForm';
 import CommentsList from '../CommentsList/CommentsList';
 import ProfilePicture from '../ProfilePicture/ProfilePicture';
 
-function CommentSection({ commentsInfo }) {
+function CommentSection({ commentsInfo, videoId }) {
     function countMessage() {
         let message = `${commentsInfo.length}`;
         message += commentsInfo.length > 1 ? ' Comments' : ' Comment';
@@ -18,7 +18,7 @@ function CommentSection({ commentsInfo }) {
             <h2 className="comments__count">{countMessage()}</h2>
             <div className="comments__form-container">
                 <ProfilePicture className="comments__form-profile-picture"/>
-                <CommentForm />
+                <CommentForm videoId={videoId}/>
             </div>
             <CommentsList commentsInfo={commentsInfo} />
         </section>

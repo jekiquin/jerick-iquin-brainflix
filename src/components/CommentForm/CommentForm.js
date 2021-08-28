@@ -1,11 +1,16 @@
 // sass import
 import './CommentForm.scss';
 
+// module import
+import { brainflix, API_KEY } from '../../peripheral/api';
+
 // image imports
 import PageButton from '../PageButton/PageButton';
 
+const USER_NAME = 'Jerick Iquin';
+const API_KEY_QSTRING = `?api_key=${API_KEY}`;
 
-function CommentForm() {
+function CommentForm({ videoId }) {
     const handleSubmit = event => {
         event.preventDefault();
         const commentInput = event.target.comment;
@@ -15,8 +20,18 @@ function CommentForm() {
         }
         commentInput.classList.remove('comments__form-input--error');
 
-        console.log(event.target.comment.value);        //placeholder for submit handler prop
-        event.target.reset();
+        brainflix.post(`/videos/${videoId}/comments${API_KEY_QSTRING}`, 
+            {
+                name: USER_NAME,
+                comment: commentInput.value.trim()
+            })
+            .then(() => {
+                console.log(event.target.comment.value);        //placeholder for submit handler prop
+                event.target.reset();
+            })
+            .catch((error) => {
+                console.log(error);
+            })
     }
 
     return (
