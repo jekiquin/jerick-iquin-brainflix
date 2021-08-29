@@ -17,6 +17,7 @@ function App() {
           <Route exact path="/" component={HomePage} />
           <Route path="/video/:videoId" component={HomePage}/>
           <Route path="/upload" component={UploadPage} />
+          {/* searchpage - basic search functionality */}
           <Route path="/search/:searchstr" component={SearchPage} />
           <Route  component={NotAPage} />
         </Switch>  
