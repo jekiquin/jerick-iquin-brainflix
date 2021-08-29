@@ -111,6 +111,7 @@ class HomePage extends Component{
         }
 
         const videoId = currentVideoInfo.id;
+        const filteredVideos = videoList.filter(video => video.id !== videoId);
         
         return(
             <main className="content">
@@ -120,7 +121,7 @@ class HomePage extends Component{
                         <InfoSection videoInfo={currentVideoInfo} />
                         <CommentSection currentVideoInfo={currentVideoInfo} handleSubmit={this.handleSubmitComment} handleClick={this.handleDeleteComment}/>
                     </div>
-                    <VideoListSection videoList={videoList} currentId={videoId}/>
+                    <VideoListSection videoList={filteredVideos} />
                 </div>
             </main>
         )

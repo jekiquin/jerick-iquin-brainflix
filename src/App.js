@@ -6,6 +6,7 @@ import Header from './components/Header/Header';
 import HomePage from './pages/HomePage/HomePage';
 import UploadPage from './pages/UploadPage/UploadPage';
 import NotAPage from './pages/NotAPage/NotAPage';
+import SearchPage from './pages/SearchPage/SearchPage';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route exact path="/" component={HomePage} />
           <Route path="/video/:videoId" component={HomePage}/>
           <Route path="/upload" component={UploadPage} />
+          <Route path="/search/:searchstr" component={SearchPage} />
           <Route  component={NotAPage} />
         </Switch>  
       </div>
