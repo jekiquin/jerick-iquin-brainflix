@@ -1,0 +1,17 @@
+@use '../../partials/1-helpers/helpers';
+
+.page-not-found {
+    @extend %flex--column;
+    @extend %limiting-container;
+    justify-content: center;
+    height: 60vh;
+    text-align: center;
+
+    &__heading {
+        margin-bottom: 2rem;
+    }
+
+    &__home-link {
+        text-decoration: underline;
+    }
+}
