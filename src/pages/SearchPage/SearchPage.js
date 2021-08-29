@@ -37,10 +37,6 @@ class SearchPage extends Component {
             return <h1>Loading Pages</h1>
         }
 
-        if(this.findList() === []) {
-            return <h1>No videos found!</h1>
-        }
-
         return (
             <main className="search-page">
                 <VideoListSection videoList={this.findList()} />
