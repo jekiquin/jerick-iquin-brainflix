@@ -16,3 +16,4 @@ Additional features(Diving Deeper)
 - Added 404 page
 - Auto scroll to top after clicking next video
 - Auto video stop after clicking next video
+- Added basic search functionality
