@@ -6,9 +6,11 @@ import { Link } from 'react-router-dom';
 import HeaderNav from '../HeaderNav/HeaderNav';
 
 // import data
-import logo from '../../assets/Images/Logo/Logo-brainflix.svg';
+// import logo from '../../assets/Images/Logo/Logo-brainflix.svg';
+import {BASE_URL} from '../../peripheral/apiBrainflix';
 
 function Header() {
+    const logo = BASE_URL + '/Logo/Logo-brainflix.svg';
     return (
         <header className="header">
             <div className="header__container">

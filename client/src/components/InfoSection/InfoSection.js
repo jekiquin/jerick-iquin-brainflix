@@ -5,12 +5,13 @@ import './InfoSection.scss';
 import Stats from '../Stats/Stats';
 import {v4 as uuid} from 'uuid';
 
-// icons import
-import seenIcon from '../../assets/Images/Icons/Icon-views.svg';
-import likeIcon from '../../assets/Images/Icons/Icon-likes.svg';
+// import base_url from api
+import {BASE_URL} from '../../peripheral/apiBrainflix';
 
 
 function InfoSection({ videoInfo }) {
+    const seenIcon = BASE_URL + '/Icons/Icon-views.svg';
+    const likeIcon = BASE_URL + '/Icons/Icon-likes.svg';
     const { title, channel, timestamp, description } = videoInfo;
     const statsCount = [seenIcon, likeIcon]
         .map(icon => {

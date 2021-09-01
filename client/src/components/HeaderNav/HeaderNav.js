@@ -11,7 +11,6 @@ function HeaderNav() {
         <div className="header__nav">
             <SearchBar />
             <div className="header__upload">
-                {/* <PageButton submit={false} className='header__button' value='UPLOAD' /> */}
                 <Link to="/upload" className="header__button">&nbsp;UPLOAD</Link>
                 <ProfilePicture className='header__profile-picture'/>
             </div>
