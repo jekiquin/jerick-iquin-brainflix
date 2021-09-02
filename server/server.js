@@ -26,6 +26,8 @@ app.use('/videos', (req, res, next) => {
 
 app.use('/videos', videoRouter);
 
+// app.use('/videos/:videoId/comment', )
+
 app.listen(PORT, () => {
     console.log(`Port open at ${PORT}.`);
     console.log('Press Ctrl+C or Command+C to exit.')

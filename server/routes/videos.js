@@ -1,13 +1,16 @@
 const router = require('express').Router();
-const fs = require('fs');
 const uniqid = require('uniqid');
+const {readData, writeFile} = require('../utils/fileSync');
+
 
 const VIDEO_DETAILS = './data/video-details.json';
 
 router.get('/', (_req, res) => {
     try {
-        res.status(200).json(getList(readData())); 
-    } catch {
+        res.status(200).json(getList(readData(VIDEO_DETAILS))); 
+    } 
+    catch (err) {
+        console.log(err);
         res.status(500).send('Internal database error')
     }
 })
@@ -15,13 +18,15 @@ router.get('/', (_req, res) => {
 router.get('/:videoId', (req, res) => {
     try {
         const videoId = req.params.videoId;
-        const videos = readData();
+        const videos = readData(VIDEO_DETAILS);
         const selectedVideo = videos.find(video => video.id === videoId);
 
         !selectedVideo
         ? res.status(400).json({message: 'No data with that id exists!'})
         : res.status(200).json(selectedVideo);
-    } catch {
+    } 
+    catch (err) {
+        console.log(err);
         res.status(500).send('Internal database error');
     }
 })
@@ -40,9 +45,9 @@ router.post('/', (req, res) => {
             comments: []
         }
 
-        const videos = readData();
+        const videos = readData(VIDEO_DETAILS);
         videos.push(data);
-        writeFile(videos);
+        writeFile(VIDEO_DETAILS, videos);
         res.status(201).json(data);
     }
     catch (err) {
@@ -52,13 +57,7 @@ router.post('/', (req, res) => {
 })
 
 
-const readData = () => {
-    return JSON.parse(fs.readFileSync(VIDEO_DETAILS));
-}
 
-const writeFile = (data) => {
-    fs.writeFileSync(VIDEO_DETAILS, JSON.stringify(data));
-}
 
 const getList = (fullDetails) => {
    return fullDetails.map(detail => {
