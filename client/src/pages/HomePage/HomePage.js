@@ -24,9 +24,6 @@ class HomePage extends Component{
         this.getVideoList()
             .then(id => {
                 this.getCurrentVideoInfo(id);
-            })
-            .then(() => {
-                 // move the screen to the top to view the current video
                 window.scrollTo(0, 0);
             })
             .catch(error => {

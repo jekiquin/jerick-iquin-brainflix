@@ -7,7 +7,7 @@ import HeaderNav from '../HeaderNav/HeaderNav';
 
 // import data
 // import logo from '../../assets/Images/Logo/Logo-brainflix.svg';
-import {BASE_URL} from '../../peripheral/apiBrainflix';
+import {BASE_URL} from '../../peripheral/api';
 
 function Header() {
     const logo = BASE_URL + '/Logo/Logo-brainflix.svg';

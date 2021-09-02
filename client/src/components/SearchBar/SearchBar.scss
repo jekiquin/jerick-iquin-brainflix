@@ -1,7 +1,7 @@
 @use '../../partials/1-helpers/helpers' as *;
 
 .header__search-input {
-    background-image: url('../../assets/Images/Icons/Icon-search.svg');
+    background-image: url('http://localhost:5002/Icons/Icon-search.svg');
     background-repeat: no-repeat;
     background-position: 1rem 50%;
     padding: 1rem 1rem 1rem 3rem;

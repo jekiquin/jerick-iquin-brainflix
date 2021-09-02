@@ -6,7 +6,7 @@ import Stats from '../Stats/Stats';
 import {v4 as uuid} from 'uuid';
 
 // import base_url from api
-import {BASE_URL} from '../../peripheral/apiBrainflix';
+import {BASE_URL} from '../../peripheral/api';
 
 
 function InfoSection({ videoInfo }) {

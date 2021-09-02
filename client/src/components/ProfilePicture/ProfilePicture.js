@@ -1,6 +1,6 @@
 import './ProfilePicture.scss';
 // import profilePicture from '../../assets/Images/Profile/Mohan-muruge.jpg';
-import {BASE_URL} from '../../peripheral/apiBrainflix';
+import {BASE_URL} from '../../peripheral/api';
 
 function ProfilePicture({ className }) {
     const profilePicture = BASE_URL + '/Profile/Mohan-muruge.jpg';

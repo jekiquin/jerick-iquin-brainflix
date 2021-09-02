@@ -5,7 +5,7 @@ import './CommentCard.scss'
 import { dateFormatter } from '../../peripheral/dateFormatter.js';
 
 // import base_url form api
-import {BASE_URL} from '../../peripheral/apiBrainflix';
+import {BASE_URL} from '../../peripheral/api';
 
 function CommentCard({ commentObj, videoId, handleClick }) {
     const deleteIcon = BASE_URL + '/Icons/icon-delete.svg';
