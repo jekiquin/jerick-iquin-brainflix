@@ -20,7 +20,8 @@ function CommentCard({ commentObj, videoId, handleClick }) {
                     <p className="comments__comment-card-date">{dateFormatter(timestamp)}</p>
                 </div>
                 <p className="comments__comment-card-paragraph">{comment}</p>
-                <img onClick={() => {handleClick(videoId, id)}} className="comments__comment-card-delete" src={deleteIcon} alt="Delete Icon" title="Delete Comment" />
+                
+                <button onClick={() => {handleClick(videoId, id)}} className="comments__comment-card-delete"><img src={deleteIcon} alt="Delete Icon" /></button>
             </div>
         </article>
     )
