@@ -3,11 +3,9 @@ const uniqid = require('uniqid');
 const {readData, writeFile} = require('../utils/fileSync');
 
 
-const VIDEO_DETAILS = './data/video-details.json';
-
-router.get('/', (_req, res) => {
+router.get('/videos', (_req, res) => {
     try {
-        res.status(200).json(getList(readData(VIDEO_DETAILS))); 
+        res.status(200).json(getList(readData())); 
     } 
     catch (err) {
         console.log(err);
@@ -15,10 +13,10 @@ router.get('/', (_req, res) => {
     }
 })
 
-router.get('/:videoId', (req, res) => {
+router.get('/videos/:videoId', (req, res) => {
     try {
         const videoId = req.params.videoId;
-        const videos = readData(VIDEO_DETAILS);
+        const videos = readData();
         const selectedVideo = videos.find(video => video.id === videoId);
 
         !selectedVideo
@@ -31,7 +29,7 @@ router.get('/:videoId', (req, res) => {
     }
 })
 
-router.post('/', (req, res) => {
+router.post('/videos', (req, res) => {
     try{
         const data = {
             id: uniqid(),
@@ -45,9 +43,9 @@ router.post('/', (req, res) => {
             comments: []
         }
 
-        const videos = readData(VIDEO_DETAILS);
+        const videos = readData();
         videos.push(data);
-        writeFile(VIDEO_DETAILS, videos);
+        writeFile(videos);
         res.status(201).json(data);
     }
     catch (err) {
@@ -55,7 +53,6 @@ router.post('/', (req, res) => {
         res.status(500).send('Internal database error');
     }
 })
-
 
 
 

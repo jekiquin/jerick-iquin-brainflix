@@ -1,11 +1,13 @@
 const fs = require('fs');
 
-const readData = (file) => {
-    return JSON.parse(fs.readFileSync(file));
+const VIDEO_DETAILS = './data/video-details.json';
+
+const readData = () => {
+    return JSON.parse(fs.readFileSync(VIDEO_DETAILS));
 }
 
-const writeFile = (file, data) => {
-    fs.writeFileSync(file, JSON.stringify(data));
+const writeFile = (data) => {
+    fs.writeFileSync(VIDEO_DETAILS, JSON.stringify(data));
 }
 
 module.exports = {readData, writeFile}
