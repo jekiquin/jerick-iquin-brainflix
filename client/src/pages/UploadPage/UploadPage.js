@@ -8,6 +8,11 @@ import UploadFormThumbnail from '../../components/UploadFormThumbnail/UploadForm
 import UploadFormInputs from '../../components/UploadFormInputs/UploadFormInputs';
 import UploadFormButtons from '../../components/UploadFormButtons/UploadFormButtons';
 
+// axios post
+import { brainflix } from '../../peripheral/api';
+
+const CHANNEL = 'Jerick Iquin';
+
 class UploadPage extends Component {
     state = {
         redirect: false
@@ -26,11 +31,16 @@ class UploadPage extends Component {
         this.setState({
             redirect: true
         });
-        const message = 
-        `Uploaded!
-        Title: ${titleInput.value.trim()}
-        Descriptions: ${descriptionInput.value.trim()}`
-        alert(message);
+        const message = {
+            title: titleInput.value.trim(),
+            description: descriptionInput.value.trim(),
+            channel: CHANNEL
+        }
+    
+        brainflix.post('/videos', message).then(() => {
+            alert(JSON.stringify(message));
+        })
+        
     }
 
     render() {
