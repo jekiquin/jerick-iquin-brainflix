@@ -27,7 +27,6 @@ class UploadPage extends Component {
             this.setState({
                 inputErrorClass: 'upload__form-inputs-input--error'
             })
-            // titleInput.classList.add('upload__form-inputs-input--error');
             return;
         }
 
@@ -42,7 +41,7 @@ class UploadPage extends Component {
         }
     
         brainflix.post('/videos', message).then(() => {
-            alert(JSON.stringify(message));
+            console.log(JSON.stringify(message));
         })
         
     }

@@ -8,19 +8,16 @@ class UploadFormInputs extends Component {
     }
 
     handleOnChange = event => {
-        const titleStr = event.target.value.trim();
-        if (titleStr !== '') {
-            this.setState({
-                inputValue: titleStr,
-            })
-            return
-        }
+        const titleStr = event.target.value;
+        this.setState({
+            inputValue: titleStr,
+        })
     }
 
 
     render() {
         const {inputValue} = this.state;
-        const inputErrorClass = inputValue ? '' : this.props.inputErrorClass;
+        const inputErrorClass = inputValue.trim() ? '' : this.props.inputErrorClass;
         return(
             <div className="upload__form-inputs">
                 <label className="upload__form-inputs-label" htmlFor="title">Title of your video</label>

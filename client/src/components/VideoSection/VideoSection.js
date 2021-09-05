@@ -22,9 +22,9 @@ class VideoSection extends Component {
         }
     }
 
-    // componentWillUnmount() {
-    //     this.stopPlaying();
-    // }
+    componentWillUnmount() {
+        this.stopPlaying();
+    }
 
     stopPlaying = () => {
         const { videoNode } = this.state;
