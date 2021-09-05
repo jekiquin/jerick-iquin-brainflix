@@ -10,7 +10,7 @@
     border-radius: 0.4rem;
     padding: 1rem;
     outline: none;
-    border-width: 1px;
+    border: 1px solid $border-color;
 
     &--error {
         border-color: red;
