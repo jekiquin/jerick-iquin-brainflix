@@ -17,3 +17,6 @@ Additional features(Diving Deeper)
 - Auto scroll to top after clicking next video
 - Auto video stop after clicking next video
 - Added basic search functionality
+
+## Sprint-3
+Submitted Sept 6 2021
