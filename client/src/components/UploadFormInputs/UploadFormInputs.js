@@ -2,7 +2,6 @@
 import { Component } from 'react';
 import './UploadFormInputs.scss';
 
-// function UploadFormInputs({inputErrorClass}) {
 class UploadFormInputs extends Component {
     state = {
         inputValue: '',

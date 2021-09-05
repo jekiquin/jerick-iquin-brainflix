@@ -2,7 +2,6 @@
 import { Component, createRef } from 'react';
 import './VideoSection.scss';
 
-// function VideoSection({ selectedVideo, selectedPoster }) {
 class VideoSection extends Component {
     state = {
         videoNode: null
@@ -23,9 +22,9 @@ class VideoSection extends Component {
         }
     }
 
-    componentWillUnmount() {
-        this.stopPlaying();
-    }
+    // componentWillUnmount() {
+    //     this.stopPlaying();
+    // }
 
     stopPlaying = () => {
         const { videoNode } = this.state;
