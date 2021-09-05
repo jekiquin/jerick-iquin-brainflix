@@ -40,11 +40,11 @@ router.delete('/:videoId/comments/:commentId', (req, res) => {
 
         const selectedVideo = videoList[selectedVideoIndex]
         const selectedCommentIndex = selectedVideo.comments.findIndex(comment => comment.id === commentId);
-        const selectComment = selectedVideo.comments[selectedCommentIndex];
         if (selectedCommentIndex === -1) {
             return res.status(400).json({message: `Unable to find index from id ${commentId}`})
         }
 
+        const selectComment = selectedVideo.comments[selectedCommentIndex];
         videoList[selectedVideoIndex].comments.splice(selectedCommentIndex);
         writeFile(videoList);
         res.status(200).json(selectComment);

@@ -20,6 +20,8 @@ class HomePage extends Component{
     }
 
     componentDidMount() {
+        const videoId = this.props.match.params && this.props.match.params.videoId;
+        console.log(videoId);
         // move the screen to the top to view the current video
         this.getVideoList()
             .then(id => {
@@ -27,7 +29,7 @@ class HomePage extends Component{
                 window.scrollTo(0, 0);
             })
             .catch(error => {
-                console.log('Error loading videos!');
+                console.log(error);
             })
     }
 
