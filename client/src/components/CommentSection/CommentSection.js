@@ -7,7 +7,7 @@ import CommentsList from '../CommentsList/CommentsList';
 import ProfilePicture from '../ProfilePicture/ProfilePicture';
 
 
-function CommentSection({ currentVideoInfo, handleSubmit, handleClick }) {
+function CommentSection({ currentVideoInfo, handleSubmitComment, handleClick }) {
     const { comments, id } = currentVideoInfo;
     function countMessage() {
         let message = `${comments.length}`;
@@ -20,7 +20,7 @@ function CommentSection({ currentVideoInfo, handleSubmit, handleClick }) {
             <h2 className="comments__count">{countMessage()}</h2>
             <div className="comments__form-container">
                 <ProfilePicture className="comments__form-profile-picture"/>
-                <CommentForm videoId={id} handleSubmit={handleSubmit}/>
+                <CommentForm videoId={id} handleSubmitComment={handleSubmitComment}/>
             </div>
             <CommentsList currentVideoInfo={currentVideoInfo} handleClick={handleClick} />
         </section>

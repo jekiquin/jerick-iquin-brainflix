@@ -69,27 +69,13 @@ class HomePage extends Component{
             })
     }
 
-    handleSubmitComment = (event, videoId) => {
-        event.preventDefault();
-        const commentInput = event.target.comment;
-        if (commentInput.value.trim() === '') {
-            commentInput.classList.add('comments__form-input--error');
-            return
-        }
-        commentInput.classList.remove('comments__form-input--error');
-
-        brainflix.post(`/videos/${videoId}/comments${API_KEY_QSTRING}`, 
+    handleSubmitComment = (videoId, commentInput) => {
+        return brainflix.post(`/videos/${videoId}/comments${API_KEY_QSTRING}`, 
             {
                 name: USER_NAME,
                 comment: commentInput.value.trim()
-            })
-            .then(() => {
-                event.target.reset();
+            }).then(() => {
                 this.getCurrentVideoInfo(videoId);
-
-            })
-            .catch((error) => {
-                console.log(error);
             })
     }
 
@@ -118,7 +104,7 @@ class HomePage extends Component{
                 <div className="content__container">
                     <div className="content__main">
                         <InfoSection videoInfo={currentVideoInfo} />
-                        <CommentSection currentVideoInfo={currentVideoInfo} handleSubmit={this.handleSubmitComment} handleClick={this.handleDeleteComment}/>
+                        <CommentSection currentVideoInfo={currentVideoInfo} handleSubmitComment={this.handleSubmitComment} handleClick={this.handleDeleteComment}/>
                     </div>
                     <VideoListSection videoList={filteredVideos} />
                 </div>
