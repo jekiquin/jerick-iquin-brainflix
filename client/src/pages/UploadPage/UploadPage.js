@@ -15,7 +15,8 @@ const CHANNEL = 'Jerick Iquin';
 
 class UploadPage extends Component {
     state = {
-        redirect: false
+        redirect: false,
+        inputErrorClass: '',
     }
 
     handleSubmit = (event) => {
@@ -23,13 +24,16 @@ class UploadPage extends Component {
         const titleInput = event.target.title;
         const descriptionInput = event.target.description;
         if(titleInput.value.trim() === '') {
-            titleInput.classList.add('upload__form-inputs-input--error');
+            this.setState({
+                inputErrorClass: 'upload__form-inputs-input--error'
+            })
+            // titleInput.classList.add('upload__form-inputs-input--error');
             return;
         }
-        titleInput.classList.remove('upload__form-inputs-input--error');
 
         this.setState({
-            redirect: true
+            redirect: true,
+            inputErrorClass: ''
         });
         const message = {
             title: titleInput.value.trim(),
@@ -55,7 +59,7 @@ class UploadPage extends Component {
                     <form className="upload__form" onSubmit={e => this.handleSubmit(e)} autoComplete="off">
                         <div className="upload__form-container">
                             <UploadFormThumbnail />
-                            <UploadFormInputs />
+                            <UploadFormInputs inputErrorClass={this.state.inputErrorClass}/>
                         </div>
                         <UploadFormButtons />
                     </form>

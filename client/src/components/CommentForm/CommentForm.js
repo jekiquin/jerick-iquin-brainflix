@@ -6,7 +6,6 @@ import {Component} from 'react';
 import PageButton from '../PageButton/PageButton';
 
 
-// function CommentForm({ videoId, handleSubmit }) {
 class CommentForm extends Component {
     state = {
         inputErrorClass: ''
@@ -20,7 +19,6 @@ class CommentForm extends Component {
             this.setState({
                 inputErrorClass: 'comments__form-input--error'
             })
-            // commentInput.classList.add('comments__form-input--error');
             return
         }
         handleSubmitComment(videoId, commentInput)
