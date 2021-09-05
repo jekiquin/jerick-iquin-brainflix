@@ -1,5 +1,5 @@
 // import styles
-import { Component, createRef } from 'react';
+import { Component } from 'react';
 import './UploadFormInputs.scss';
 
 // function UploadFormInputs({inputErrorClass}) {
